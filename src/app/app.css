@@ -1,0 +1,92 @@
+.site-header,
+.app-shell,
+.site-footer {
+  width: min(100% - 2rem, 74rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4rem;
+  border-bottom: 1px solid #d8d8d2;
+}
+
+.site-header__brand {
+  color: #171717;
+  font-size: 0.95rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.site-header__brand:focus-visible {
+  outline: 3px solid #1d5fbf;
+  outline-offset: 4px;
+}
+
+.site-header__version {
+  color: #666660;
+  font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.78rem;
+}
+
+.app-intro {
+  max-width: 53rem;
+  padding: clamp(3.5rem, 9vh, 6.5rem) 0 clamp(3.5rem, 8vh, 5.5rem);
+}
+
+.app-intro__eyebrow,
+.app-intro h1,
+.app-intro__summary {
+  margin: 0;
+}
+
+.app-intro__eyebrow {
+  margin-bottom: 1rem;
+  color: #1d5fbf;
+  font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.app-intro h1 {
+  max-width: 13ch;
+  font-size: clamp(2.5rem, 7vw, 5.25rem);
+  font-weight: 650;
+  line-height: 0.98;
+}
+
+.app-intro__summary {
+  max-width: 43rem;
+  margin-top: 1.75rem;
+  color: #555550;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.65;
+}
+
+.site-footer {
+  padding: 2.5rem 0;
+  color: #6b6b65;
+  font-size: 0.85rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .site-header,
+  .app-shell,
+  .site-footer {
+    width: min(100% - 1.25rem, 74rem);
+  }
+
+  .site-header__version {
+    display: none;
+  }
+
+  .app-intro h1 {
+    font-size: 2.7rem;
+  }
+}
