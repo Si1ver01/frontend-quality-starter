@@ -28,8 +28,8 @@ Vite напечатает локальный URL. Откройте его и о�
 
 ## Что уже подключено
 
-- **Strict foundation** — React 19, Vite 8 и TypeScript 6 с project references.
-- **Static gates** — ESLint flat config, typed linting, JSX accessibility и Prettier.
+- **Strict foundation** — React 19, Vite 8 и TypeScript 7 с project references.
+- **Static gates** — ESLint 10 flat config, typed linting, JSX accessibility и Prettier.
 - **Component confidence** — Vitest, Testing Library и V8 coverage без искусственного threshold.
 - **Visible states** — Storybook с docs, controls, `addon-a11y` и четырьмя stories.
 - **Browser gate** — Playwright проверяет pointer, keyboard, mobile layout и axe.
@@ -46,6 +46,12 @@ npm run test:e2e
 `verify` последовательно запускает format check, lint, typecheck, component tests с coverage, сборку
 приложения, статическую сборку Storybook и проверку документации. E2E остаётся отдельным gate,
 поскольку требует установленный browser binary.
+
+TypeScript 7 пока не предоставляет старый compiler API, который нужен `typescript-eslint`. Поэтому
+пакет `typescript` в `devDependencies` указывает на `@typescript/typescript6` для lint tooling, а
+alias `@typescript/native` предоставляет TypeScript 7. Команды `npm run typecheck` и `npm run build`
+используют TypeScript 7 через `tsc`; проверить обе версии можно командами `npx tsc --version` и
+`npx tsc6 --version`.
 
 Для подробной диагностики включите структурированные DEBUG-сообщения:
 

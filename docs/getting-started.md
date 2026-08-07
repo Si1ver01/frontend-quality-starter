@@ -25,6 +25,23 @@ npm ci
 
 `npm ci` использует committed `package-lock.json` и не изменяет версии зависимостей.
 
+## TypeScript и ESLint
+
+Проект использует TypeScript 7 для `typecheck` и сборки. Для `typescript-eslint` подключён
+совместимый TypeScript 6 API через alias `typescript: npm:@typescript/typescript6`. Это временная
+схема совместимости до появления нового compiler API в TypeScript 7.1.
+
+Проверить версии можно так:
+
+```bash
+npx tsc --version
+npx tsc6 --version
+```
+
+`eslint-plugin-jsx-a11y` версии `6.10.2` уже проходит lint на ESLint 10, но его опубликованный
+peer-диапазон пока заканчивается на ESLint 9. Поэтому `.npmrc` включает `legacy-peer-deps=true`,
+чтобы `npm ci` воспроизводимо устанавливал проверенную комбинацию.
+
 ## Первый запуск
 
 ```bash
