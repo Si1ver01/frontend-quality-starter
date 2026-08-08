@@ -44,8 +44,8 @@ Production-сборка получает доступные на статиче�
 ## Выпуск версии
 
 ```bash
-git tag v0.1.0
-git push origin v0.1.0
+git tag -a v0.1.1 -m "Frontend Quality Starter v0.1.1"
+git push origin v0.1.1
 ```
 
 Tag workflow повторяет dry-run gates и только после их успеха создаёт GitHub Release. Единственный
@@ -55,7 +55,7 @@ job с `contents: write` использует `RELEASE_NOTES.md` и прикла
 локально:
 
 ```bash
-RELEASE_TAG=v0.1.0 RELEASE_MAIN_REF=origin/main npm run release:check-tag
+RELEASE_TAG=v0.1.1 RELEASE_MAIN_REF=origin/main npm run release:check-tag
 ```
 
 ### Защита release-тегов
