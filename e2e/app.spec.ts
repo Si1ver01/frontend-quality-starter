@@ -75,3 +75,43 @@ test('has no automated accessibility violations', async ({ page }, testInfo) => 
 
   expect(accessibilityScan.violations).toEqual([]);
 });
+
+test('enforces the browser security policy', async ({ page }, testInfo) => {
+  const contentSecurityPolicy = await page
+    .locator('meta[http-equiv="Content-Security-Policy"]')
+    .getAttribute('content');
+  const referrerPolicy = await page.locator('meta[name="referrer"]').getAttribute('content');
+
+  logE2e('INFO', '[FIX:browser-hardening] Browser policies inspected', {
+    browser: testInfo.project.name,
+    contentSecurityPolicy,
+    referrerPolicy,
+  });
+
+  expect(contentSecurityPolicy).toBe(
+    "default-src 'self'; base-uri 'none'; connect-src 'self'; font-src 'self'; " +
+      "form-action 'none'; frame-src 'none'; img-src 'self' data:; object-src 'none'; " +
+      "script-src 'self'; style-src 'self'",
+  );
+  expect(contentSecurityPolicy).not.toContain("'unsafe-inline'");
+  expect(contentSecurityPolicy).not.toContain("'unsafe-eval'");
+  expect(referrerPolicy).toBe('strict-origin-when-cross-origin');
+
+  const inlineScriptExecuted = await page.evaluate(async () => {
+    const marker = '__cspInlineScriptExecuted';
+    const script = document.createElement('script');
+    script.textContent = `window.${marker} = true;`;
+    document.body.append(script);
+    await new Promise((resolve) => setTimeout(resolve, 0));
+
+    return marker in window;
+  });
+
+  if (inlineScriptExecuted) {
+    logE2e('ERROR', '[FIX:browser-hardening] CSP allowed an inline script', {
+      browser: testInfo.project.name,
+    });
+  }
+
+  expect(inlineScriptExecuted).toBe(false);
+});
