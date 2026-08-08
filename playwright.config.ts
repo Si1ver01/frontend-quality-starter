@@ -44,9 +44,9 @@ export default defineConfig({
   },
   projects: resolveProjects(),
   webServer: {
-    command: 'npm run dev -- --host 127.0.0.1 --port 4173',
+    command: 'npm run build && npm run preview -- --host 127.0.0.1 --port 4173',
     url: BASE_URL,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
     timeout: 120_000,
     env: {
       VITE_LOG_LEVEL: process.env.DEBUG ? 'DEBUG' : 'SILENT',

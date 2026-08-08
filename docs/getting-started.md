@@ -65,6 +65,7 @@ gates. Измените один checkbox и перезагрузите стра
 | `npm run test:e2e`             | Выполнить Playwright suite                        |
 | `npm run storybook`            | Запустить Storybook на порту 6006                 |
 | `npm run docs:check`           | Проверить локальные ссылки и команды документации |
+| `npm run release:check-tag`    | Проверить release tag из `RELEASE_TAG`            |
 
 ## Логирование
 

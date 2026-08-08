@@ -16,6 +16,7 @@ const documentedScripts = [
   'build',
   'dev',
   'docs:check',
+  'release:check-tag',
   'storybook',
   'test',
   'test:coverage',
