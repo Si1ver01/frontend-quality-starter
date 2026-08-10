@@ -2,7 +2,7 @@
 
 > Проверяемая основа React-приложения с единым quality loop от редактора до GitHub Release.
 
-[![CI](https://github.com/ddanshin94/frontend-quality-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/ddanshin94/frontend-quality-starter/actions/workflows/ci.yml)
+[![CI](https://github.com/Si1ver01/frontend-quality-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/Si1ver01/frontend-quality-starter/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-176443.svg)](LICENSE)
 
 `frontend-quality-starter` связывает strict TypeScript, ESLint, Vitest, Storybook, Playwright и
@@ -17,7 +17,7 @@ GitHub Actions в один небольшой шаблон. Демонстрац
 последние две версии Chrome, Edge и Firefox, а также Safari 17+.
 
 ```bash
-git clone https://github.com/ddanshin94/frontend-quality-starter.git
+git clone https://github.com/Si1ver01/frontend-quality-starter.git
 cd frontend-quality-starter
 npm ci
 npm run dev

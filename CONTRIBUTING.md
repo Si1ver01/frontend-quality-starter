@@ -6,7 +6,7 @@
 ## Подготовка
 
 ```bash
-git clone https://github.com/ddanshin94/frontend-quality-starter.git
+git clone https://github.com/Si1ver01/frontend-quality-starter.git
 cd frontend-quality-starter
 nvm use
 npm ci

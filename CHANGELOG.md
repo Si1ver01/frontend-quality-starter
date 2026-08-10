@@ -33,6 +33,6 @@
 - CI, GitHub Pages, release dry-run и трехбраузерный release workflow.
 - Русскоязычная документация, contribution guide и visual assets.
 
-[Unreleased]: https://github.com/ddanshin94/frontend-quality-starter/compare/v0.1.1...HEAD
-[0.1.1]: https://github.com/ddanshin94/frontend-quality-starter/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.com/ddanshin94/frontend-quality-starter/releases/tag/v0.1.0
+[Unreleased]: https://github.com/Si1ver01/frontend-quality-starter/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/Si1ver01/frontend-quality-starter/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/Si1ver01/frontend-quality-starter/releases/tag/v0.1.0
